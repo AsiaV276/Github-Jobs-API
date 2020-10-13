@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #f4f6f8;
+}
+
+/* header */
+header {
+  background: url("../assets/mobile/bg-pattern-header.svg");
+  background-size: cover;
+  height: 135px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.logo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 35px;
+}
+
+.toggle-theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 35px;
+  margin-top: 37px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.toggle-theme div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 4px;
+  background-color: #fff;
+  border: none;
+  border-radius: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.toggle-theme div .toggle-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: #5964E0;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  text-align: center;
+  margin: 35px;
+  margin-top: 0;
+}
+
+.filter-container {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  top: 100px;
+  z-index: 2;
+}
+
+.filter {
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  height: 2rem;
+  padding: 20px;
+  width: 250px;
+}
+
+.jobs-container {
+  height: 2000px;
+  margin-top: 225px;
+  border: blue 1px dotted;
+}
+
+.jobs-container .job {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: left;
+  background-color: #fff;
+  height: 200px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.jobs-container .job-logo {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: -25px;
+  border-radius: 10px;
+  border: blue 1px solid;
+}
+/*# sourceMappingURL=style.css.map */

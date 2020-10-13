@@ -1,0 +1,104 @@
+$light-background: #f4f6f8;
+$light-boxes: #fff;
+$margin: 35px;
+$violet:  #5964E0;
+
+* {
+    margin: 0;
+}
+body {
+    background-color: $light-background;
+}
+
+/* header */
+header {
+    background: url('../assets/mobile/bg-pattern-header.svg');
+    background-size: cover;
+    height: 135px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+.logo {
+    width: fit-content;
+    height: fit-content;
+    margin: 35px;
+}
+.toggle-theme {
+    display: flex;
+    align-items: center;
+    margin: $margin;
+    margin-top: $margin + 2px;
+    height: fit-content;
+
+    div {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 4px;
+        background-color: $light-boxes;
+        border: none;
+        border-radius: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 10px;
+
+        .toggle-btn {
+            width: 15px;
+            height: 15px;
+            border-radius: 10px;
+            background-color: $violet;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+main {
+    text-align: center;
+    margin: $margin;
+    margin-top: 0;
+}
+.filter-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    top: 100px;
+    z-index: 2;
+}
+.filter {
+    background-color: $light-boxes;
+    border: none;
+    border-radius: 5px;
+    height: 2rem;
+    padding: 20px;
+    width: 250px;
+}
+.jobs-container {
+    height: 2000px;
+    margin-top: 225px;
+    border: blue 1px dotted;
+
+    .job {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        background-color: $light-boxes;
+        height: 200px;
+        width: 100%;
+        border-radius: 5px;
+    }
+    .job-logo {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        top: -25px;
+        border-radius: 10px;
+        border: blue 1px solid;
+    }
+}
