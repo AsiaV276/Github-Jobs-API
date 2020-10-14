@@ -2,6 +2,7 @@ $light-background: #f4f6f8;
 $light-boxes: #fff;
 $margin: 35px;
 $violet:  #5964E0;
+$light-violet: #939bf4;
 
 * {
     margin: 0;
@@ -12,9 +13,10 @@ body {
 
 /* header */
 header {
-    background: url('../assets/mobile/bg-pattern-header.svg');
+    background: url('../assets/mobile/bg-pattern-header.svg') no-repeat;
     background-size: cover;
-    height: 135px;
+    width: 100%;
+    min-height: 135px;
     display: flex;
     justify-content: space-between;
     position: fixed;
@@ -24,7 +26,7 @@ header {
 .logo {
     width: fit-content;
     height: fit-content;
-    margin: 35px;
+    margin: $margin;
 }
 .toggle-theme {
     display: flex;
@@ -33,18 +35,22 @@ header {
     margin-top: $margin + 2px;
     height: fit-content;
 
-    div {
+    .toggle-switch {
         display: flex;
         align-items: center;
         width: 40px;
-        height: 4px;
+        height: 15px;
         background-color: $light-boxes;
         border: none;
         border-radius: 12px;
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 5px;
+        cursor: pointer;
 
+        input {
+            display: none;
+        }
         .toggle-btn {
             width: 15px;
             height: 15px;
@@ -52,9 +58,15 @@ header {
             background-color: $violet;
             margin: 0;
             padding: 0;
+            transition: .4s;
+        }
+        input:checked + .toggle-btn {
+            transform: translateX(26px);
         }
     }
+    
 }
+/* main */
 main {
     text-align: center;
     margin: $margin;
@@ -70,28 +82,69 @@ main {
     width: 100%;
     top: 100px;
     z-index: 2;
+    
 }
-.filter {
+.filter1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background-color: $light-boxes;
     border: none;
     border-radius: 5px;
-    height: 2rem;
-    padding: 20px;
-    width: 250px;
+    height: auto;
+    padding: 15px;
+    width: 100%;
+    margin-left: $margin;
+    margin-right: $margin;
+    box-sizing: content-box;
 }
+.filter1,
+.filter2 {
+    input {
+        border: none;
+    }
+    .filter-img {
+        margin-right: 15px;
+    }
+}
+.filter2 {
+    display: none;
+}
+.search-btn {
+    box-sizing: content-box;
+    background-color: $violet;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+
+    img {
+        width: 20px;
+        height: auto;
+    }
+}
+.search-btn:hover {
+    background-color: $light-violet;
+}
+
+
+
 .jobs-container {
-    height: 2000px;
     margin-top: 225px;
-    border: blue 1px dotted;
 
     .job {
         display: flex;
         flex-direction: column;
         text-align: left;
         background-color: $light-boxes;
-        height: 200px;
-        width: 100%;
+        height: 175px;
+        max-width: 100%;
         border-radius: 5px;
+        box-sizing: content-box;
+        padding: 25px;
+        padding-top: 0;
+        margin-bottom: 50px;
     }
     .job-logo {
         width: 50px;
@@ -100,5 +153,73 @@ main {
         top: -25px;
         border-radius: 10px;
         border: blue 1px solid;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        background: url('../assets/tablet/bg-pattern-header.svg') no-repeat;
+        background-size: cover;
+    }
+    .filter1 {
+        display: none;
+    }
+    .filter2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $light-boxes;
+        border: none;
+        border-radius: 5px;
+        height: auto;
+        padding: 15px;
+        width: 100%;
+        margin-left: 35px;
+        margin-right: 35px;
+        box-sizing: content-box;
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            img {
+                margin-right: 10px;
+                width: auto;
+                height: 17px;
+            }
+            #full-time {
+                input {
+                    
+                }
+            }
+            #full-time-checkbox {
+                border: none;
+                height: 15px;
+                width: 15px;
+                background-color: #f4f6f8;
+            }
+        }
+    }
+    .jobs-container {
+        display: flex;
+        //flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .job {
+            width: 40%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    header {
+        background: url('../assets/desktop/bg-pattern-header.svg') no-repeat;
+        background-size: cover;
+    }
+    .jobs-container {
+        gap: 10px;
+        .job {
+            width: 320px;
+        }
     }
 }

@@ -8,9 +8,10 @@ body {
 
 /* header */
 header {
-  background: url("../assets/mobile/bg-pattern-header.svg");
+  background: url("../assets/mobile/bg-pattern-header.svg") no-repeat;
   background-size: cover;
-  height: 135px;
+  width: 100%;
+  min-height: 135px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +47,7 @@ header {
   height: fit-content;
 }
 
-.toggle-theme div {
+.toggle-theme .toggle-switch {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,24 +55,37 @@ header {
       -ms-flex-align: center;
           align-items: center;
   width: 40px;
-  height: 4px;
+  height: 15px;
   background-color: #fff;
   border: none;
   border-radius: 12px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.toggle-theme div .toggle-btn {
+.toggle-theme .toggle-switch input {
+  display: none;
+}
+
+.toggle-theme .toggle-switch .toggle-btn {
   width: 15px;
   height: 15px;
   border-radius: 10px;
   background-color: #5964E0;
   margin: 0;
   padding: 0;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
+.toggle-theme .toggle-switch input:checked + .toggle-btn {
+  -webkit-transform: translateX(26px);
+          transform: translateX(26px);
+}
+
+/* main */
 main {
   text-align: center;
   margin: 35px;
@@ -95,19 +109,64 @@ main {
   z-index: 2;
 }
 
-.filter {
+.filter1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #fff;
   border: none;
   border-radius: 5px;
-  height: 2rem;
-  padding: 20px;
-  width: 250px;
+  height: auto;
+  padding: 15px;
+  width: 100%;
+  margin-left: 35px;
+  margin-right: 35px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+
+.filter1 input,
+.filter2 input {
+  border: none;
+}
+
+.filter1 .filter-img,
+.filter2 .filter-img {
+  margin-right: 15px;
+}
+
+.filter2 {
+  display: none;
+}
+
+.search-btn {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  background-color: #5964E0;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.search-btn img {
+  width: 20px;
+  height: auto;
+}
+
+.search-btn:hover {
+  background-color: #939bf4;
 }
 
 .jobs-container {
-  height: 2000px;
   margin-top: 225px;
-  border: blue 1px dotted;
 }
 
 .jobs-container .job {
@@ -120,9 +179,14 @@ main {
           flex-direction: column;
   text-align: left;
   background-color: #fff;
-  height: 200px;
-  width: 100%;
+  height: 175px;
+  max-width: 100%;
   border-radius: 5px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 25px;
+  padding-top: 0;
+  margin-bottom: 50px;
 }
 
 .jobs-container .job-logo {
@@ -132,5 +196,81 @@ main {
   top: -25px;
   border-radius: 10px;
   border: blue 1px solid;
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    background: url("../assets/tablet/bg-pattern-header.svg") no-repeat;
+    background-size: cover;
+  }
+  .filter1 {
+    display: none;
+  }
+  .filter2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    height: auto;
+    padding: 15px;
+    width: 100%;
+    margin-left: 35px;
+    margin-right: 35px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  .filter2 .input-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .filter2 .input-container img {
+    margin-right: 10px;
+    width: auto;
+    height: 17px;
+  }
+  .filter2 .input-container #full-time-checkbox {
+    border: none;
+    height: 15px;
+    width: 15px;
+    background-color: #f4f6f8;
+  }
+  .jobs-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .jobs-container .job {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  header {
+    background: url("../assets/desktop/bg-pattern-header.svg") no-repeat;
+    background-size: cover;
+  }
+  .jobs-container {
+    gap: 10px;
+  }
+  .jobs-container .job {
+    width: 320px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
